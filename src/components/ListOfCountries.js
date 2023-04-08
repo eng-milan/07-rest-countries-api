@@ -2,6 +2,19 @@
 function ListOfCountries({ data }) {
 
     const renderedCountries = data.map((country) => {
+        const addCommas = (number) => {
+            let string = number.toString()
+            let result = ""
+
+            for (let i = 0; i < string.length; i++) {
+                if ((string.length - i) % 3 === 0 && i !== 0) {
+                    result += ","
+                }
+                result += string.charAt(i)
+            }
+            return result
+        }
+
         return <div
             className="flex flex-col mb-[40px] mx-[60px] pb-[50px] bg-[#2b3945] rounded-lg"
             key={country.name.official}>
@@ -12,7 +25,7 @@ function ListOfCountries({ data }) {
             <div className="ml-[20px]">
                 <h2 className="mb-[10px] text-[20px] font-bold">{country.name.common}</h2>
                 <h3 className="font-semibold">
-                    Population: <span className="font-light">{country.population}</span>
+                    Population: <span className="font-light">{addCommas(country.population)}</span>
                 </h3>
                 <h4 className="font-semibold">
                     Region: <span className="font-light">{country.region}</span>
