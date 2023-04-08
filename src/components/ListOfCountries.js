@@ -10,7 +10,7 @@ function ListOfCountries({ data }) {
                 src={country.flags.svg}
                 alt={country.name.official} />
             <div className="ml-[20px]">
-                <h2 className="mb-[10px] text-[20px] font-bold">{country.name.official}</h2>
+                <h2 className="mb-[10px] text-[20px] font-bold">{country.name.common}</h2>
                 <h3 className="font-semibold">
                     Population: <span className="font-light">{country.population}</span>
                 </h3>
