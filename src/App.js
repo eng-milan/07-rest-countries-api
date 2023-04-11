@@ -6,15 +6,12 @@ import HomePage from "./pages/HomePage";
 
 function App() {
 
-
-
-
   return <BrowserRouter>
     <main className="bg-[#202c37] text-[#ffffff] min-h-screen">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/:cca3" element={<CountryDetail />} />
+        <Route path="/:cca3" element={<CountryDetail />}/>
       </Routes>
       <Footer />
     </main>

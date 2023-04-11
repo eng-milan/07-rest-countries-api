@@ -3,21 +3,21 @@ import SearchBar from "../components/SearchBar"
 import ListofCountries from "../components/ListOfCountries"
 
 function HomePage() {
-    const [countries, setCountries] = useState([])
+    const [allCountries, setAllCountries] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
     const [dropdownContinent, setDropdownContinent] = useState("FilterbyRegion")
     const [filteredCountries, setFilteredCountries] = useState([])
 
     useEffect(() => {
         fetch("https://restcountries.com/v3.1/all").then(resp => resp.json()).then(data => {
-            setCountries(data)
+            setAllCountries(data)
             setFilteredCountries(data)
         })
     }, [])
 
     const filterCountries = (value, continent) => {
 
-        let filteredBySearchTerm = countries.filter((country) => {
+        let filteredBySearchTerm = allCountries.filter((country) => {
             return country.name.common.toLowerCase().includes(value.toLowerCase())
         })
 
@@ -49,7 +49,7 @@ function HomePage() {
 
     return <>
         <SearchBar onCountrySearch={onCountrySearch} onContinentClick={onContinentClick} searchValue={searchTerm} />
-        <ListofCountries data={filteredCountries} />
+        <ListofCountries filteredCountries={filteredCountries} allCountries={allCountries} />
     </>
 }
 

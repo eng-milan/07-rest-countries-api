@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
 
-function ListOfCountries({ data }) {
-
-    const renderedCountries = data.map((country) => {
+function ListOfCountries({ filteredCountries, allCountries }) {
+    const renderedCountries = filteredCountries.map((country) => {
         const addCommas = (number) => {
             let string = number.toString()
             let result = ""
@@ -19,7 +18,7 @@ function ListOfCountries({ data }) {
         return <div
             className="flex flex-col mb-[40px] mx-[60px] bg-[#2b3945] rounded-lg md:mx-[50px]"
             key={country.name.official}>
-            <Link to={`/${country.cca3}`}>
+            <Link to={`/${country.cca3}`} state={{ country: country, allCountries: allCountries }}>
                 <img
                     className="mb-[30px] rounded-t-lg md:max-h-[300px]"
                     src={country.flags.svg}
@@ -33,7 +32,7 @@ function ListOfCountries({ data }) {
                         Region: <span className="font-light">{country.region}</span>
                     </h4>
                     <h5 className="font-semibold">
-                        Capital: <span className="font-light">{country.capital ? country.capital[0] : ""}</span>
+                        Capital: <span className="font-light">{country.capital ? country.capital[0] : "-"}</span>
                     </h5>
                 </div>
             </Link>
