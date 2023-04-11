@@ -5,6 +5,10 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 function CountryDetail() {
     const { state: { allCountries, country } } = useLocation()
 
+    if (!useLocation().state || !allCountries || !country) {
+        return <div>Loading...</div>
+    }
+
     const addCommas = (number) => {
         let string = number.toString()
         let result = ""

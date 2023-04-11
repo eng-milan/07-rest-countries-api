@@ -15,7 +15,7 @@ function SearchBar({ onCountrySearch, onContinentClick, searchValue }) {
             className="mt-[40px] px-[30px] py-[15px] bg-[#2b3945] cursor-pointer rounded md:m-0 w-[250px]"
             defaultValue="FilterbyRegion"
             onChange={e => onContinentClick(e.target.value)}>
-            <option value="FilterbyRegion">Filter by Region</option>
+            <option defaultValue="FilterbyRegion">Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="America">America</option>
             <option value="Asia">Asia</option>
