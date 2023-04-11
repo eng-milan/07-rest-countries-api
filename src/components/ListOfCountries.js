@@ -16,11 +16,11 @@ function ListOfCountries({ filteredCountries, allCountries }) {
         }
 
         return <div
-            className="flex flex-col mb-[40px] mx-[60px] bg-[#2b3945] rounded-lg md:mx-[50px]"
+            className="flex flex-col mb-[40px] mx-[60px] bg-[#2b3945] rounded-lg sm:items-center md:mx-[20px] lg:mx-[30px] xl:mx-[50px]"
             key={country.name.official}>
             <Link to={`/${country.cca3}`} state={{ country: country, allCountries: allCountries }}>
                 <img
-                    className="mb-[30px] rounded-t-lg md:max-h-[300px]"
+                    className="mb-[30px] rounded-t-lg sm:max-h-[340px]"
                     src={country.flags.svg}
                     alt={country.name.official} />
                 <div className="ml-[20px] mb-[30px]">

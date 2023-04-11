@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/:cca3" element={<CountryDetail />}/>
       </Routes>
-      <Footer />
+      <Footer className="mt-[20px]" />
     </main>
   </BrowserRouter>
 }
