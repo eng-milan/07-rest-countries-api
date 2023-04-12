@@ -14,6 +14,7 @@ function SearchBar({ onCountrySearch, onContinentClick, searchValue }) {
         <select
             className="mt-[40px] px-[30px] py-[15px] bg-[#2b3945] cursor-pointer rounded md:m-0 w-[250px]"
             defaultValue="FilterbyRegion"
+            aria-label="Select an option"
             onChange={e => onContinentClick(e.target.value)}>
             <option defaultValue="FilterbyRegion">Filter by Region</option>
             <option value="Africa">Africa</option>
