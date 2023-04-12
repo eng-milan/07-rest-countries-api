@@ -3,7 +3,7 @@ import { BsSearch } from "react-icons/bs";
 function SearchBar({ onCountrySearch, onContinentClick, searchValue }) {
 
     return <div className="mt-[30px] mx-[20px] rounded md:flex md:justify-between md:items-center lg:mx-[30px] xl:mx-[50px]">
-        <div className="flex items-center px-[30px] py-[10px] bg-[#2b3945] text-[16px] rounded font-bold w-[500px]">
+        <div className="flex items-center px-[30px] py-[10px] bg-[#2b3945] text-[16px] rounded font-bold md:w-[450px]">
             <BsSearch className="mr-[20px] cursor-pointer" />
             <input
                 className="py-[10px] w-full bg-[#2b3945]"
